@@ -63,9 +63,9 @@ forward OnBcryptVersionCheck(index, response_code, data[]);
 	forward BCRYPT_OnFilterScriptInit();
 
 	#if defined _ALS_OnFilterScriptInit
-	    #undef OnFilterScriptInit
+		#undef OnFilterScriptInit
 	#else
-	    #define _ALS_OnFilterScriptInit
+		#define _ALS_OnFilterScriptInit
 	#endif
 	#define OnFilterScriptInit BCRYPT_OnFilterScriptInit
 #else
@@ -78,9 +78,9 @@ forward OnBcryptVersionCheck(index, response_code, data[]);
 	forward BCRYPT_OnGameModeInit();
 
 	#if defined _ALS_OnGameModeInit
-	    #undef OnGameModeInit
+		#undef OnGameModeInit
 	#else
-	    #define _ALS_OnGameModeInit
+		#define _ALS_OnGameModeInit
 	#endif
 	#define OnGameModeInit BCRYPT_OnGameModeInit
 #endif
