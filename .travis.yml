@@ -1,0 +1,26 @@
+language: cpp
+compiler:
+  - clang
+  - gcc
+addons:
+  apt:
+    packages:
+      - g++-multilib
+
+before_script:
+  - mkdir build && cd build
+  - cmake ..
+
+script:
+  - make
+  - cd ..
+
+deploy:
+  on:
+    all_branches: true
+  provider: bintray
+  file: bintray.json
+  user: southclaws
+  key:
+    secure: OoXbk11SJ756gZoWSXOfL46VpeRP4qsn3kKgmJJuzFsFxe30VFXUqWILRT7Vw9To2jVnup0Tj3b26WA2ctOSThpI++NbOIMqkLLmg4Gu6dt99xRr1CPcYYz/kjHzv5uZsrkyf7f03Ob9xg02lhTANlqj9vzYJk4dFcWtJrj12cyb6ObBxwk2662/4AMUCsgC+hGUcdIDsu8HGP0VEOmC2F5FPv195mEkppuDszhk93bnok5O1OdoRoKfE+vRRnszysnb616PwYYgEMy7f3fCKSiq75sOUirdznHkd0nDISOY9w/bllUH+z/Ti69F6TqXpzsthcOoQ2AIQ6fWZ/h17VsLJ4uJvRIQdygW9VufQoDvirCqcIgkMiTrIJqg6QlY7IElLUu85KKG6Xh3EYMkRiJiVgXtG9s2xpUjxnn78IxtjFIX/qN3Mz1jk0CQNvfUbtQNbjRz1qDAZQK07JIRUy7VxsxKxGd0Z+xdNpbYkMp1oMsxx5bQxYmMC6UsM1VkOZa7YwHuUPNOGsE4fSzw2mj44goSor9WKyVdutL4q+dDQXHr2YE8jBorf60K+NJj11VggQuKyWBUMinTKmSS4watrb1ivs5SQBidv4e2e/zUIxWYEQl/MPGfdY/x53Uv7JyvnMoZdUPeoaKWpcRg4WrSnPdRHwE5r/fU6uVwp3Q=
+  skip_cleanup: true
